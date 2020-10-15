@@ -2,7 +2,7 @@ import CONFIG from '../../globals/config';
 
 const createRestaurantTemplate = (restaurant) => `
   <div class="box">
-    <img src="${CONFIG.BASE_URL_SMALL_IMAGE + restaurant.pictureId}" alt="${restaurant.pictureId}">
+    <img src="${CONFIG.BASE_URL_SMALL_IMAGE + restaurant.pictureId}" alt="${restaurant.name}">
     <div class="rating">
       <p><span class="material-icons yellow">star_rate</span> ${restaurant.rating} &nbsp;
       <span class="material-icons red">location_on</span> ${restaurant.city}</p>
@@ -65,12 +65,24 @@ const createReviewFormTemplate = () => `
   </div>
 `;
 
-
+const createLikeButtonTemplate = () => `
+  <button aria-label="like this movie" id="likeButton" class="like">
+     <i class="fa fa-heart-o" aria-hidden="true"></i>
+  </button>
+`;
+ 
+const createLikedButtonTemplate = () => `
+  <button aria-label="unlike this movie" id="likeButton" class="like">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </button>
+`;
 export { 
   createRestaurantTemplate, 
   createRestaurantDetailTemplate, 
   createRestaurantFoodsTemplate,
   createRestaurantDrinksTemplate,
   createRestaurantReviewsTemplate,
-  createReviewFormTemplate
+  createReviewFormTemplate,
+  createLikeButtonTemplate,
+  createLikedButtonTemplate
 };

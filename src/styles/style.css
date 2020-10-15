@@ -171,6 +171,7 @@ header {
 }
 
 #hamburger {
+  cursor: pointer;
   text-decoration: none;
   font-size: 44px;
   color: #fff;
@@ -502,6 +503,23 @@ footer p span {
   background-color: #903749;
   -webkit-transition: .5s;
   transition: .5s;
+}
+
+.like {
+  font-size: 18px;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background-color: #db0000;
+  color: white;
+  border: 0;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (min-width: 749px) {
