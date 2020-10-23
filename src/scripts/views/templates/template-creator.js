@@ -52,15 +52,15 @@ const createReviewFormTemplate = () => `
     <form action="">
       <label for="">Your Name</label>
       <br>
-      <input type="text" name="" id="">
+      <input type="text" name="name" id="name">
       
       <br>
       <label for="">Your Comment</label>
       <br>
-      <textarea name="" id="" cols="30" rows="10"></textarea>
+      <textarea name="" id="review" cols="30" rows="10"></textarea>
 
       <br>
-      <button type="submit">Submit</button>
+      <button type="submit" id="submit-review">Submit</button>
     </form>
   </div>
 `;

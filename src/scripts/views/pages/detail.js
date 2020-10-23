@@ -7,6 +7,7 @@ import { createRestaurantDetailTemplate,
          createReviewFormTemplate,
         } from '../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
+import PostReview from '../../utils/post-review';
 
 const Detail = {
   async render() {
@@ -66,6 +67,23 @@ const Detail = {
 
     const reviewFormContainer = document.querySelector('.add-reviews');
     reviewFormContainer.innerHTML += createReviewFormTemplate();
+
+    const btnSubmit = document.querySelector("#submit-review");
+    const name = document.querySelector("#name");
+    const review = document.querySelector("#review");
+
+    btnSubmit.addEventListener('click', (e) => {
+      e.preventDefault();
+      if(name.value === '' || review.value === '' ) {
+        alert('Inputan tidak boleh kosong');
+        name.value = '';
+        review.value = '';
+      } else {
+        PostReview(url, name.value, review.value);
+        name.value = '';
+        review.value = '';
+      }
+    })
 
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),

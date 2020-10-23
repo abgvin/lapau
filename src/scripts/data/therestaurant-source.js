@@ -1,4 +1,5 @@
 import API_ENDPOINT from '../globals/api-endpoint';
+import CONFIG from '../globals/config';
 
 
 class TheRestaurantSource {
@@ -12,17 +13,17 @@ class TheRestaurantSource {
     return response.json();
   }
 
-  // static async addREview(review) {
-  //   const response = await fetch(API_ENDPOINT.REVIEW, {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       'X-Auth-Token': CONFIG.API_KEY,
-  //     },
-  //     body: JSON.stringify(review),
-  //   });
-  //   return response.json();
-  // }
+  static async postRestaurant(data) {
+    const rawResponse = await fetch(API_ENDPOINT.POST_REVIEW, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Auth-Token': CONFIG.API_KEY,
+      },
+      body: JSON.stringify(data),
+    });
+    return rawResponse;
+  }
 };
 
 export default TheRestaurantSource;
