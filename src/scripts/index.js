@@ -1,5 +1,6 @@
 import 'regenerator-runtime';
 import '../styles/style.css';
+import '../styles/loading.css';
 import App from './views/app';
 import swRegsiter  from './utils/sw-register';
 import WebSocketInitiator from './utils/websocket-initiator';

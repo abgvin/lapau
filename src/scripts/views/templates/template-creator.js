@@ -76,6 +76,34 @@ const createLikedButtonTemplate = () => `
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `;
+
+
+const createRestaurantDetailSkeletonTemplate = `
+  <div class="items-description"></div>
+  <div class="foods-and-drinks" style="background: linear-gradient(0deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('/images/foods-background.jpg'); background-size: cover;">
+  <div class="foods">
+    <h3>Foods</h3>
+    <ul>
+      <li id="foods"></li>
+    </ul>
+  </div>
+  <div class="drinks">
+    <h3>Drinks</h3>
+    <ul>
+      <li id="drinks"></li>
+    </ul>
+  </div>
+  </div>
+  <div class="reviews">
+  <di class="reviews-title">
+    <h2>Reviews</h2>
+    <p>What our customers think about us</p>
+  </di>
+  <div class="reviews-items"></div>
+  </div>
+  <div class="add-reviews"></div>
+`;
+
 export { 
   createRestaurantTemplate, 
   createRestaurantDetailTemplate, 
@@ -84,5 +112,6 @@ export {
   createRestaurantReviewsTemplate,
   createReviewFormTemplate,
   createLikeButtonTemplate,
-  createLikedButtonTemplate
+  createLikedButtonTemplate,
+  createRestaurantDetailSkeletonTemplate,
 };
