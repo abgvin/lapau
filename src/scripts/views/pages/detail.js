@@ -70,13 +70,14 @@ const Detail = {
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       restaurant: {
-        id: restaurant.id,
-        name: restaurant.name,
-        description: restaurant.description,
-        city: restaurant.city,
-        address: restaurant.address,
-      }
-    })
+        id: restaurant.restaurant.id,
+        name: restaurant.restaurant.name,
+        description: restaurant.restaurant.description,
+        pictureId: restaurant.restaurant.pictureId,
+        city: restaurant.restaurant.city,
+        rating: restaurant.restaurant.rating,
+      },
+    });
   },
 };
  

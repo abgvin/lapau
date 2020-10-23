@@ -46,7 +46,7 @@ const LikeButtonInitiator = {
     likeButton.addEventListener('click', async () => {
       await FavoriteRestaurantIdb.deleteRestaurant(this._restaurant.id);
       this._renderButton();
-    })
+    });
   },
 
 };

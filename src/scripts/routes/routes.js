@@ -1,11 +1,11 @@
 import Restaurant from '../views/pages/list-restaurant';
-import Favorite from '../views/pages/list-favorite';
+import Like from '../views/pages/like';
 import Detail from '../views/pages/detail';
 
 const routes = {
   '/': Restaurant,
   '/restaurant': Restaurant,
-  '/favorite': Favorite,
+  '/like': Like,
   '/detail/:id': Detail,
 };
 
