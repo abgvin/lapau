@@ -1,7 +1,7 @@
-
+/* eslint-disable no-underscore-dangle */
 import FavoriteRestaurantIdb from '../data/favoriterestaurant-idb';
 import { createLikeButtonTemplate, createLikedButtonTemplate } from '../views/templates/template-creator';
- 
+
 const LikeButtonInitiator = {
   async init({ likeButtonContainer, restaurant }) {
     this._likeButtonContainer = likeButtonContainer;
@@ -10,24 +10,21 @@ const LikeButtonInitiator = {
     await this._renderButton();
   },
 
-
   async _renderButton() {
     const { id } = this._restaurant;
 
-    if(await this._isRestaurantExist(id)) {
+    if (await this._isRestaurantExist(id)) {
       this._renderLiked();
     } else {
-      this._renderLike(); 
+      this._renderLike();
     }
   },
-
 
   async _isRestaurantExist(id) {
     const restaurant = await FavoriteRestaurantIdb.getRestaurant(id);
     return !!restaurant;
   },
 
-  
   _renderLike() {
     this._likeButtonContainer.innerHTML = createLikeButtonTemplate();
 
@@ -38,7 +35,6 @@ const LikeButtonInitiator = {
     });
   },
 
- 
   _renderLiked() {
     this._likeButtonContainer.innerHTML = createLikedButtonTemplate();
 

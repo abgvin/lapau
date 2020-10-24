@@ -1,7 +1,6 @@
 import API_ENDPOINT from '../globals/api-endpoint';
 import CONFIG from '../globals/config';
 
-
 class TheRestaurantSource {
   static async listRestaurants() {
     const response = await fetch(API_ENDPOINT.LIST);
@@ -24,6 +23,6 @@ class TheRestaurantSource {
     });
     return rawResponse;
   }
-};
+}
 
 export default TheRestaurantSource;

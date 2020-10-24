@@ -15,14 +15,6 @@ module.exports = merge(common, {
               presets: ['@babel/preset-env'],
             },
           },
-          {
-            test: /\.(png|jpe?g|gif)$/i,
-            use: [
-              {
-                loader: 'file-loader',
-              },
-            ],
-          },
         ],
       },
     ],

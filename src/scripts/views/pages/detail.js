@@ -1,12 +1,14 @@
+/* eslint-disable no-alert */
 import UrlParser from '../../routes/url-parser';
 import TheRestaurantSource from '../../data/therestaurant-source';
-import { createRestaurantDetailTemplate, 
-         createRestaurantFoodsTemplate, 
-         createRestaurantDrinksTemplate,
-         createRestaurantReviewsTemplate,
-         createReviewFormTemplate,
-         createRestaurantDetailSkeletonTemplate,
-        } from '../templates/template-creator';
+import {
+  createRestaurantDetailTemplate,
+  createRestaurantFoodsTemplate,
+  createRestaurantDrinksTemplate,
+  createRestaurantReviewsTemplate,
+  createReviewFormTemplate,
+  createRestaurantDetailSkeletonTemplate,
+} from '../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
 import PostReview from '../../utils/post-review';
 import loading from '../templates/loading';
@@ -20,37 +22,37 @@ const Detail = {
       <div id="likeButtonContainer"></div>
     `;
   },
- 
+
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurant = await TheRestaurantSource.detailRestaurant(url.id);
     const loadingElement = document.querySelector('#loading');
-    const main = document.querySelector("#items-detail");
+    const main = document.querySelector('#items-detail');
     loadingElement.innerHTML = loading;
     main.style.display = 'none';
 
     try {
       const restaurantDetailSkeleteon = document.querySelector('#items-detail');
-      restaurantDetailSkeleteon.innerHTML +=  createRestaurantDetailSkeletonTemplate;
+      restaurantDetailSkeleteon.innerHTML += createRestaurantDetailSkeletonTemplate;
 
       const restaurantDetailContainer = document.querySelector('.items-description');
       restaurantDetailContainer.innerHTML += createRestaurantDetailTemplate(restaurant.restaurant);
 
       const foodsDatas = restaurant.restaurant.menus.foods;
       const foodsContainer = document.querySelector('#foods');
-      foodsDatas.forEach(food => {
+      foodsDatas.forEach((food) => {
         foodsContainer.innerHTML += createRestaurantFoodsTemplate(food);
       });
 
       const drinksData = restaurant.restaurant.menus.drinks;
       const drinksContainer = document.querySelector('#drinks');
-      drinksData.forEach(drink => {
+      drinksData.forEach((drink) => {
         drinksContainer.innerHTML += createRestaurantDrinksTemplate(drink);
       });
 
       const reviewsData = restaurant.restaurant.consumerReviews;
       const reviewsContainer = document.querySelector('.reviews-items');
-      reviewsData.forEach(review => {
+      reviewsData.forEach((review) => {
         reviewsContainer.innerHTML += createRestaurantReviewsTemplate(review);
       });
 
@@ -71,21 +73,18 @@ const Detail = {
 
       main.style.display = 'block';
       loadingElement.style.display = 'none';
-    } catch(error) {
+    } catch (error) {
       main.style.display = 'none';
       loadingElement.style.display = 'block';
     }
 
-    
-
-
-    const btnSubmit = document.querySelector("#submit-review");
-    const name = document.querySelector("#name");
-    const review = document.querySelector("#review");
+    const btnSubmit = document.querySelector('#submit-review');
+    const name = document.querySelector('#name');
+    const review = document.querySelector('#review');
 
     btnSubmit.addEventListener('click', (e) => {
       e.preventDefault();
-      if(name.value === '' || review.value === '' ) {
+      if (name.value === '' || review.value === '') {
         alert('Inputan tidak boleh kosong');
         name.value = '';
         review.value = '';
@@ -95,8 +94,7 @@ const Detail = {
         review.value = '';
       }
     });
-
   },
 };
- 
+
 export default Detail;

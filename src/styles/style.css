@@ -235,6 +235,7 @@ header {
 }
 
 .hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('../public/images/hero.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -395,6 +396,7 @@ footer p span {
 }
 
 .foods-and-drinks {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('../public/images/foods-background.jpg'); background-size: cover;
   padding: 40px 20px;
   display: flex;
   flex-wrap: wrap;
@@ -414,7 +416,9 @@ footer p span {
 }
 
 #items-detail .reviews {
+  background-color: #f9f7f7;
   padding-top: 60px;
+  padding-bottom: 60px;
   text-align: center;
 }
 
