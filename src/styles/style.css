@@ -158,25 +158,29 @@ header {
   background-color: #355C7D;
   display: grid;
   grid-template-columns: 20px 1fr 1fr 20px;
-  align-content: center;
 }
 
 .logo {
-  padding: 5px 0;
   text-align: left;
   grid-column-start: 2;
   font-size: 32px;
   font-family: 'Concert One', cursive;
   color: #fff;
+  padding: 12px 0px;
+  line-height: 150%;
 }
 
 #hamburger {
+  margin-top: 5px;
+  padding: 10px;
   cursor: pointer;
   text-decoration: none;
-  font-size: 44px;
+  font-size: 30px;
   color: #fff;
-  padding: 0 10px;
+  background-color: transparent;
+  border: none;
 }
+
 
 .nav-item {
   display: none;
@@ -322,6 +326,7 @@ header {
 
 #restaurant .box .text h2 a {
   font-size: 1.4rem;
+  padding: 10px 0px;
   text-decoration: none;
   color: #111;
 }
@@ -560,6 +565,7 @@ footer p span {
   }
 
   .nav-item {
+    margin-top: 15px;
     padding: 10px 0;
     display: block;
     text-align: right;
@@ -568,9 +574,9 @@ footer p span {
   header .nav-item a {
     color: #fff;
     text-decoration: none;
-    padding: 0 20px;
+    padding: 20px 20px;
     font-size: 20px;
-    font-weight: lighter;
+    font-weight: 400;
   }
 
   #sidebar {
