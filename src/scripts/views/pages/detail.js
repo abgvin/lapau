@@ -7,6 +7,7 @@ import {
   createRestaurantDrinksTemplate,
   createRestaurantReviewsTemplate,
   createReviewFormTemplate,
+  createNotFoundDataTemplate,
   createRestaurantDetailSkeletonTemplate,
 } from '../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
@@ -16,7 +17,8 @@ import loading from '../templates/loading';
 const Detail = {
   async render() {
     return `
-    <div id="loading"></div>
+      <div id="loading"></div>
+      <div id="not-found"></div>
       <div id="items-detail">
       </div>
       <div id="likeButtonContainer"></div>
@@ -30,6 +32,10 @@ const Detail = {
     const main = document.querySelector('#items-detail');
     loadingElement.innerHTML = loading;
     main.style.display = 'none';
+
+    const restaurantNotFoundContainer = document.querySelector('#not-found');
+    restaurantNotFoundContainer.innerHTML += createNotFoundDataTemplate;
+    restaurantNotFoundContainer.style.display = 'none';
 
     try {
       const restaurantDetailSkeleteon = document.querySelector('#items-detail');
@@ -76,12 +82,16 @@ const Detail = {
     } catch (error) {
       main.style.display = 'none';
       loadingElement.style.display = 'block';
+      restaurantNotFoundContainer.style.display = 'block';
     }
 
     const btnSubmit = document.querySelector('#submit-review');
     const name = document.querySelector('#name');
     const review = document.querySelector('#review');
 
+    if (!btnSubmit) {
+      return;
+    }
     btnSubmit.addEventListener('click', (e) => {
       e.preventDefault();
       if (name.value === '' || review.value === '') {
