@@ -7,35 +7,27 @@ import {
   createRestaurantDrinksTemplate,
   createRestaurantReviewsTemplate,
   createReviewFormTemplate,
-  createNotFoundDataTemplate,
   createRestaurantDetailSkeletonTemplate,
 } from '../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
 import PostReview from '../../utils/post-review';
-import loading from '../templates/loading';
 
 const Detail = {
   async render() {
     return `
-      <div id="loading"></div>
-      <div id="not-found"></div>
-      <div id="items-detail">
-      </div>
+      <div id="items-detail"></div>
       <div id="likeButtonContainer"></div>
+      <p id="error-text">Data Not Found</p>
     `;
   },
 
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurant = await TheRestaurantSource.detailRestaurant(url.id);
-    const loadingElement = document.querySelector('#loading');
     const main = document.querySelector('#items-detail');
-    loadingElement.innerHTML = loading;
     main.style.display = 'none';
-
-    const restaurantNotFoundContainer = document.querySelector('#not-found');
-    restaurantNotFoundContainer.innerHTML += createNotFoundDataTemplate;
-    restaurantNotFoundContainer.style.display = 'none';
+    const errorText = document.querySelector('#error-text');
+    errorText.style.display = 'none';
 
     try {
       const restaurantDetailSkeleteon = document.querySelector('#items-detail');
@@ -56,7 +48,7 @@ const Detail = {
         drinksContainer.innerHTML += createRestaurantDrinksTemplate(drink);
       });
 
-      const reviewsData = restaurant.restaurant.consumerReviews;
+      const reviewsData = restaurant.restaurant.customerReviews;
       const reviewsContainer = document.querySelector('.reviews-items');
       reviewsData.forEach((review) => {
         reviewsContainer.innerHTML += createRestaurantReviewsTemplate(review);
@@ -76,22 +68,16 @@ const Detail = {
           rating: restaurant.restaurant.rating,
         },
       });
-
       main.style.display = 'block';
-      loadingElement.style.display = 'none';
     } catch (error) {
       main.style.display = 'none';
-      loadingElement.style.display = 'block';
-      restaurantNotFoundContainer.style.display = 'block';
+      errorText.style.display = 'block';
     }
 
     const btnSubmit = document.querySelector('#submit-review');
     const name = document.querySelector('#name');
     const review = document.querySelector('#review');
 
-    if (!btnSubmit) {
-      return;
-    }
     btnSubmit.addEventListener('click', (e) => {
       e.preventDefault();
       if (name.value === '' || review.value === '') {

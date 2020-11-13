@@ -1,26 +1,19 @@
 import FavoriteRestaurantIdb from '../../data/favoriterestaurant-idb';
-import { createRestaurantTemplate, createNotFoundDataTemplate } from '../templates/template-creator';
-import loading from '../templates/loading';
+import { createRestaurantTemplate } from '../templates/template-creator';
 
 const Like = {
   async render() {
     return `
       <div id="restaurant"></div>
-      <div id="loading"></div>
-      <div id="not-found"></div>
+      <p id="error-text">Your Favorite List is Empty</p>
     `;
   },
 
   // eslint-disable-next-line consistent-return
   async afterRender() {
     const restaurantsContainer = document.querySelector('#restaurant');
-    const loadingElement = document.querySelector('#loading');
-    const notfoundElement = document.querySelector('#not-found');
-    loadingElement.innerHTML = loading;
-    notfoundElement.innerHTML = createNotFoundDataTemplate;
-
-    loadingElement.style.display = 'none';
-    notfoundElement.style.display = 'none';
+    const errorText = document.querySelector('#error-text');
+    errorText.style.display = 'none';
 
     try {
       const data = await FavoriteRestaurantIdb.getAllRestaurants();
@@ -33,9 +26,8 @@ const Like = {
         return error;
       }
     } catch (error) {
-      loadingElement.style.display = 'block';
-      notfoundElement.style.display = 'block';
       restaurantsContainer.style.display = 'none';
+      errorText.style.display = 'block';
     }
   },
 
