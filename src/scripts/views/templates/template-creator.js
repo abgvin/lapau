@@ -9,7 +9,7 @@ const createRestaurantTemplate = (restaurant) => `
     </div>
     <div class="text">
       <h2><a href="#/detail/${restaurant.id}">${restaurant.name}</a></h2>
-      <p>${restaurant.description.substring(0, 300)}...</p>
+      <p>${restaurant.description.substring(0, 170)}...</p>
     </div>
   </div>
 `;
