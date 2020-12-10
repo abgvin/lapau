@@ -8,7 +8,7 @@ self.addEventListener('install', (event) => {
   event.waitUntil(CacheHelper.cachingAppShell([
     ...assets,
     './',
-    'https://fonts.googleapis.com/css2?family=Assistant:wght@300;400&family=Playfair+Display:wght@600;700&display=swap',
+    'https://fonts.googleapis.com/css2?family=ABeeZee&family=Quicksand:wght@500;600;700&display=swap',
     'https://fonts.googleapis.com/icon?family=Material+Icons',
   ]));
 });

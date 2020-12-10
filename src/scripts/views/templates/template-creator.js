@@ -2,7 +2,7 @@ import CONFIG from '../../globals/config';
 
 const createRestaurantTemplate = (restaurant) => `
   <div class="box">
-    <img crossorigin="anonymous" src="${CONFIG.BASE_URL_SMALL_IMAGE + restaurant.pictureId}" alt="${restaurant.name}">
+    <img class="lazyload" crossorigin="anonymous" src="${CONFIG.BASE_URL_SMALL_IMAGE + restaurant.pictureId}" alt="${restaurant.name}">
     <div class="rating">
       <p><span class="material-icons yellow">star_rate</span> ${restaurant.rating} &nbsp;
       <span class="material-icons red">location_on</span> ${restaurant.city}</p>
@@ -16,7 +16,7 @@ const createRestaurantTemplate = (restaurant) => `
 
 const createRestaurantDetailTemplate = (restaurant) => `
     <div class="items-detail-image">
-      <img crossorigin="anonymous" src="${CONFIG.BASE_URL_MEDIUM_IMAGE + restaurant.pictureId}" alt="${restaurant.name}">
+      <img class="lazyload" crossorigin="anonymous" src="${CONFIG.BASE_URL_MEDIUM_IMAGE + restaurant.pictureId}" alt="${restaurant.name}">
     </div>
 
     <div class="items-detail-text">
