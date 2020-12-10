@@ -9,7 +9,7 @@ import {
   createReviewFormTemplate,
   createRestaurantDetailSkeletonTemplate,
 } from '../templates/template-creator';
-import LikeButtonInitiator from '../../utils/like-button-initiator';
+import LikeButtonPresenter from '../../utils/like-button-presenter';
 import PostReview from '../../utils/post-review';
 
 const Detail = {
@@ -57,7 +57,7 @@ const Detail = {
       const reviewFormContainer = document.querySelector('.add-reviews');
       reviewFormContainer.innerHTML += createReviewFormTemplate();
 
-      LikeButtonInitiator.init({
+      LikeButtonPresenter.init({
         likeButtonContainer: document.querySelector('#likeButtonContainer'),
         restaurant: {
           id: restaurant.restaurant.id,
