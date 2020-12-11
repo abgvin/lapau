@@ -9,7 +9,6 @@ self.addEventListener('install', (event) => {
     ...assets,
     './',
     'https://fonts.googleapis.com/css2?family=ABeeZee&family=Quicksand:wght@500;600;700&display=swap',
-    'https://fonts.googleapis.com/icon?family=Material+Icons',
   ]));
 });
 

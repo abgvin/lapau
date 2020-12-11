@@ -194,7 +194,7 @@ header {
   position: absolute;
   transform: translate(0, -400px);
   transition: transform 0.3s ease-in-out;
-  background-color: #111;
+  background-color: #232931;
 }
 
 #sidebar.open {
@@ -215,7 +215,7 @@ header {
   text-decoration: none;
   padding: 10px 0;
   font-size: 20px;
-  color: rgb(209, 209, 209);
+  color: #fff;
 }
 
 .active {
@@ -251,7 +251,7 @@ header {
 
 .hero-section h1 {
   font-size: 2.4rem;
-  padding-top: 110px;
+  padding-top: 100px;
   font-family: 'Quicksand', sans-serif;
   color: #fff;
   font-weight: bold;
@@ -280,7 +280,7 @@ header {
 .title-section .title h1 {
   font-size: 1.6rem;
   font-family: 'Quicksand', sans-serif;
-  color: #111;
+  color: #232931;
   padding-bottom: 15px;
 }
 
@@ -305,8 +305,8 @@ header {
 }
 
 #restaurant .box img {
-  width: 100%;
-  height: 200px;
+  max-width: 100%;
+  height: auto;
   -o-object-position: center;
      object-position: center;
   -o-object-fit: cover;
@@ -321,7 +321,7 @@ header {
 #restaurant .box .text h2 {
   font-family: 'Quicksand', sans-serif;
   font-weight: bold;
-  color: #111;
+  color: #232931;
   padding-bottom: 10px;
 }
 
@@ -329,17 +329,19 @@ header {
   font-size: 1.4rem;
   padding: 10px 0;
   text-decoration: none;
-  color: #111;
+  color: #232931;
 }
 
 #restaurant .box .text p {
   font-weight: 300;
   font-size: 1rem;
   line-height: 150%;
+  color: #393e46
 }
 
 #restaurant .box .rating {
   padding: 10px 30px 10px 30px;
+  color: #393e46;
 }
 
 #restaurant .box .rating p {
@@ -385,14 +387,15 @@ footer p span {
 }
 
 .items-detail-image img{
-  width: 100%;
+  max-width: 100%;
+  height: auto;
   border-radius: 5px;
   margin-bottom: 20px;
 }
 .items-detail-text h2 {
   font-family: 'Quicksand', sans-serif;
   padding-bottom: 20px;
-  color: #111;
+  color: #232931;
   font-size: 1.4rem;
   font-weight: bolder;
 }
@@ -400,18 +403,18 @@ footer p span {
 .items-detail-text p {
   line-height: 150%;
   font-weight: 300;
+  color: #393e46;
 }
 
 .items-detail-text .alamat {
   font-weight: bold;
-  color: #2b2e4a;
+  color: #393e46;
 }
 
 .foods-and-drinks {
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('../public/images/foods-background.jpg'); background-size: cover;
   padding: 40px 20px;
   display: flex;
-  flex-wrap: wrap;
   margin: 0 auto;
   justify-content: center;
   gap: 40px;
@@ -430,15 +433,14 @@ footer p span {
 
 #items-detail .reviews {
   background-color: #f9f7f7;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding: 60px 100px;
   text-align: center;
 }
 
 #items-detail .reviews h2 {
   font-family: 'Quicksand', sans-serif;
   padding-bottom: 10px;
-  color: #111;
+  color: #232931;
   font-size: 1.4rem;
   font-weight: bolder;
 }
@@ -455,7 +457,6 @@ footer p span {
 }
 
 #items-detail .reviews .reviews-items h3 {
-  font-weight: bold;
   padding-bottom: 10px;
   font-size: 1.2rem;
 }
@@ -463,6 +464,7 @@ footer p span {
 #items-detail .reviews .reviews-items p {
   font-weight: lighter;
   padding-bottom: 1rem;
+  text-align: left;
 }
 
 #items-detail .add-reviews {
@@ -478,6 +480,7 @@ footer p span {
   font-family: 'Quicksand', sans-serif;
   padding-bottom: 10px;
   font-size: 1.4rem;
+  font-weight: bold;
 }
 
 
@@ -541,20 +544,6 @@ footer p span {
 }
 
 
-#loading {
-  margin-top: 10px !important;
-}
-
-.not-found {
-  text-align: center;
-  margin: -70px;
-  padding-bottom: 40px;
-}
-
-.not-found img {
-  width: 200px;
-}
-
 @media screen and (min-width: 749px) {
   #restaurant {
     gap: 30px;
@@ -612,12 +601,14 @@ footer p span {
   }
 
   .hero-section h1 {
-    padding-top: 150px;
+    padding-top: 120px;
     font-size: 2em;
   }
+
   .hero-section p {
     font-size: 1.2em;
   }
+
   #restaurant {
     gap: 30px;
     -ms-grid-columns: 1fr 1fr 1fr;
@@ -636,9 +627,8 @@ footer p span {
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-  #items-detail .foods-and-drinks {
-    gap: 200px;
-  }
+  
+
   #items-detail .reviews .reviews-items {
     margin: auto;
     display: -webkit-box;
