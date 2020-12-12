@@ -2,14 +2,13 @@ import CONFIG from '../../globals/config';
 
 const createRestaurantTemplate = (restaurant) => `
   <div class="box">
-    <img class="lazyload" crossorigin="anonymous" 
+    <img class="lazyload" crossorigin="anonymous" width="100%" height="180px"
       src="${CONFIG.BASE_URL_SMALL_IMAGE + restaurant.pictureId}" 
       srcset="${CONFIG.BASE_URL_SMALL_IMAGE + restaurant.pictureId} 480w, ${CONFIG.BASE_URL_MEDIUM_IMAGE + restaurant.pictureId} 800w"
       sizes="(max-width: 600px) 480px, 800px"
       alt="${restaurant.name}">
     <div class="rating">
-      <p><span class="material-icons yellow">star_rate</span> ${restaurant.rating} &nbsp;
-      <span class="material-icons red">location_on</span> ${restaurant.city}</p>
+        <p>🧡 ${restaurant.rating} &nbsp; 📌 ${restaurant.city}</p>
     </div>
     <div class="text">
       <h2><a href="#/detail/${restaurant.id}">${restaurant.name}</a></h2>
@@ -20,7 +19,7 @@ const createRestaurantTemplate = (restaurant) => `
 
 const createRestaurantDetailTemplate = (restaurant) => `
     <div class="items-detail-image">
-      <img class="lazyload" crossorigin="anonymous" 
+      <img class="lazyload" crossorigin="anonymous"
         src="${CONFIG.BASE_URL_SMALL_IMAGE + restaurant.pictureId}" 
         srcset="${CONFIG.BASE_URL_SMALL_IMAGE + restaurant.pictureId} 480w, ${CONFIG.BASE_URL_MEDIUM_IMAGE + restaurant.pictureId} 800w"
         sizes="(max-width: 600px) 480px, 800px"
@@ -75,13 +74,13 @@ const createReviewFormTemplate = () => `
 
 const createLikeRestaurantButtonTemplate = () => `
   <button aria-label="like this restaurant" id="likeButton" class="like">
-     <i class="fa fa-heart-o" aria-hidden="true"></i>
+     <i class="material-icons" aria-hidden="true">favorite_border</i>
   </button>
 `;
 
 const createUnLikeRestaurantButtonTemplate = () => `
   <button aria-label="unlike this restaurant" id="likeButton" class="like">
-    <i class="fa fa-heart" aria-hidden="true"></i>
+    <i class="material-icons" aria-hidden="true">favorite</i>
   </button>
 `;
 

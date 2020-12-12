@@ -142,13 +142,12 @@ body {
   font-family: 'ABeeZee', sans-serif;
 }
 
-
 .yellow {
-  color: #fddb3a;
+  color: #ffbd39;
 }
 
 .red {
-  color: #e84545;
+  color: #e61c5d;
 }
 
 header {
@@ -266,10 +265,8 @@ header {
 }
 
 .title-section {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
   text-align: center;
 }
 
@@ -290,27 +287,20 @@ header {
 
 #restaurant {
   padding: 40px;
-  display: -ms-grid;
   display: grid;
   gap: 20px;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
 }
 
 #restaurant .box {
   width: 100%;
-  -webkit-box-shadow: 0px 16px 40px rgba(15, 15, 15, 0.1);
-          box-shadow: 0px 16px 40px rgba(15, 15, 15, 0.1);
+  box-shadow: 0px 16px 40px rgba(15, 15, 15, 0.1);
   border-radius: 10px;
 }
 
 #restaurant .box img {
-  max-width: 100%;
-  height: auto;
-  -o-object-position: center;
-     object-position: center;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-position: center;
+  object-fit: cover;
   border-radius: 10px 10px 0px 0px;
 }
 
@@ -340,25 +330,18 @@ header {
 }
 
 #restaurant .box .rating {
-  padding: 10px 30px 10px 30px;
-  color: #393e46;
+  color: #232931;
+  margin: 20px 0 10px 30px;
 }
 
-#restaurant .box .rating p {
-  font-size: 1rem;
-}
-
-#restaurant .box .rating span {
-  vertical-align: middle;
-  font-size: 1rem;
+.rating p {
+  font: 1rem;
 }
 
 #error-text {
   text-align: center; 
   margin-top: 100px
 }
-
-
 
 footer {
   margin-top: 100px;
@@ -387,12 +370,13 @@ footer p span {
 }
 
 .items-detail-image img{
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
   border-radius: 5px;
   margin-bottom: 20px;
 }
 .items-detail-text h2 {
+  padding-top: 20px;
   font-family: 'Quicksand', sans-serif;
   padding-bottom: 20px;
   color: #232931;
@@ -522,7 +506,6 @@ footer p span {
 #items-detail .add-reviews .add-reviews-form button:hover {
   cursor: pointer;
   background-color: #903749;
-  -webkit-transition: .5s;
   transition: .5s;
 }
 
@@ -547,8 +530,7 @@ footer p span {
 @media screen and (min-width: 749px) {
   #restaurant {
     gap: 30px;
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .items-description {
@@ -558,8 +540,7 @@ footer p span {
   }
 
   #items-detail .reviews .reviews-items {
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -603,6 +584,7 @@ footer p span {
   .hero-section h1 {
     padding-top: 120px;
     font-size: 2em;
+    line-height: 110%;
   }
 
   .hero-section p {
@@ -611,8 +593,7 @@ footer p span {
 
   #restaurant {
     gap: 30px;
-    -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   #restaurant .box .rating {
@@ -624,21 +605,15 @@ footer p span {
 
 @media screen and (min-width: 1020px) {
   #restaurant {
-    -ms-grid-columns: 1fr 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
   
 
   #items-detail .reviews .reviews-items {
     margin: auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 40px;
   }
   #items-detail .reviews .reviews-items .reviews-item {
