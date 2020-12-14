@@ -20,7 +20,7 @@ const createRestaurantTemplate = (restaurant) => `
 const createRestaurantDetailTemplate = (restaurant) => `
     <div class="items-detail-image">
       <img class="lazyload" crossorigin="anonymous"
-        src="${CONFIG.BASE_URL_SMALL_IMAGE + restaurant.pictureId}" 
+        data-src="${CONFIG.BASE_URL_SMALL_IMAGE + restaurant.pictureId}" 
         srcset="${CONFIG.BASE_URL_SMALL_IMAGE + restaurant.pictureId} 480w, ${CONFIG.BASE_URL_MEDIUM_IMAGE + restaurant.pictureId} 800w"
         sizes="(max-width: 600px) 480px, 800px"
         alt="${restaurant.name}">

@@ -238,7 +238,7 @@ header {
 }
 
 .hero-section {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('../public/images/hero.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('../public/images/hero-small.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -396,7 +396,7 @@ footer p span {
 }
 
 .foods-and-drinks {
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('../public/images/foods-background.jpg'); background-size: cover;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('../public/images/foods-background-small.jpg'); background-size: cover;
   padding: 40px 20px;
   display: flex;
   margin: 0 auto;
@@ -579,6 +579,7 @@ footer p span {
 
   .hero-section {
     height: 500px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('../public/images/hero-large.jpg');
   }
 
   .hero-section h1 {
@@ -598,6 +599,10 @@ footer p span {
 
   #restaurant .box .rating {
     padding-top: 20px;
+  }
+
+  .foods-and-drinks {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('../public/images/foods-background-large.jpg'); background-size: cover;
   }
 
 
