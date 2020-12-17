@@ -371,10 +371,10 @@ footer p span {
 
 .items-detail-image img {
   width: 100%;
-  height: auto;
   border-radius: 5px;
   margin-bottom: 20px;
 }
+
 .items-detail-text h2 {
   font-family: 'Quicksand', sans-serif;
   padding-bottom: 20px;
@@ -598,6 +598,10 @@ footer p span {
 
   #restaurant .box .rating {
     padding-top: 20px;
+  }
+
+  .items-detail-image img {
+    height: auto;
   }
 
   .foods-and-drinks {
