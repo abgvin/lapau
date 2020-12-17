@@ -3,8 +3,8 @@ import CONFIG from '../../globals/config';
 const createRestaurantTemplate = (restaurant) => `
   <div class="box">
     <img class="lazyload" crossorigin="anonymous" width="100%" height="180px"
-      src="${CONFIG.BASE_URL_SMALL_IMAGE + restaurant.pictureId}" 
-      srcset="${CONFIG.BASE_URL_SMALL_IMAGE + restaurant.pictureId} 480w, ${CONFIG.BASE_URL_MEDIUM_IMAGE + restaurant.pictureId} 800w"
+      data-src="${CONFIG.BASE_URL_SMALL_IMAGE + restaurant.pictureId}" 
+      data-srcset="${CONFIG.BASE_URL_SMALL_IMAGE + restaurant.pictureId} 480w, ${CONFIG.BASE_URL_MEDIUM_IMAGE + restaurant.pictureId} 800w"
       sizes="(max-width: 600px) 480px, 800px"
       alt="${restaurant.name}">
     <div class="rating">
