@@ -538,6 +538,10 @@ footer p span {
     gap: 40px;
   }
 
+  .items-detail-image img {
+    height: auto;
+  }
+
   #items-detail .reviews .reviews-items {
     grid-template-columns: 1fr 1fr;
   }
@@ -598,10 +602,6 @@ footer p span {
 
   #restaurant .box .rating {
     padding-top: 20px;
-  }
-
-  .items-detail-image img {
-    height: auto;
   }
 
   .foods-and-drinks {
